@@ -1,20 +1,124 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ahmet Çeğil Akademi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #111, #222);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .paketler {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .paket {
+      background: #1c1c1c;
+      border: 1px solid #333;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .paket h3 {
+      margin-bottom: 15px;
+      color: cyan;
+    }
+    .paket ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+    .iletisim a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #fff;
+      background: cyan;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8rem;
+      color: #666;
+      border-top: 1px solid #222;
+      margin-top: 50px;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; background:#111; color:white; text-align:center; padding:50px;">
-  <h1>Ahmet Çeğil Akademi</h1>
-  <p><em>Sen üret.</em></p>
+<body>
+  <header>
+    <h1>Ahmet Çeğil Akademi</h1>
+    <p><em>Sen üret.</em></p>
+  </header>
 
-  <h2>İletişim</h2>
-  <p><a href="mailto:ahmetcegilakademi@gmail.com" style="color:cyan;">E-posta Gönder</a></p>
-  <p><a href="https://www.instagram.com/ahmcgl1/" target="_blank" style="color:cyan;">Instagram</a></p>
-  <p><a href="https://wa.me/905301230692" target="_blank" style="color:cyan;">WhatsApp</a></p>
+  <section>
+    <h2 style="text-align:center;">🎵 Eğitim Paketleri</h2>
+    <div class="paketler">
+      <div class="paket">
+        <h3>Başlangıç Paketi</h3>
+        <ul>
+          <li>DAW temel kullanımı</li>
+          <li>Melodi yazımı & armoni</li>
+          <li>Drum kit düzeni</li>
+          <li>4 hafta × 2 saat = <strong>8 saat</strong></li>
+          <li>Online veya yüz yüze</li>
+        </ul>
+      </div>
+      <div class="paket">
+        <h3>Orta Seviye</h3>
+        <ul>
+          <li>Mixing temel teknikler</li>
+          <li>EQ & kompresyon</li>
+          <li>Groove & bassline tasarımı</li>
+          <li>Aranjman geliştirme</li>
+          <li>4 hafta × 3 saat</li>
+        </ul>
+      </div>
+      <div class="paket">
+        <h3>İleri Seviye</h3>
+        <ul>
+          <li>Profesyonel mix & mastering</li>
+          <li>Label & dijital dağıtım</li>
+          <li>Serum/Spire/Dune sound design</li>
+          <li>Proje analizi & mentorluk</li>
+          <li>Gerçek yayın süreci simülasyonu</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <footer style="margin-top:50px; font-size:12px; color:#aaa;">
+  <section class="iletisim" style="text-align:center;">
+    <h2>📩 İletişim</h2>
+    <a href="mailto:ahmetcegilakademi@gmail.com">E-posta</a>
+    <a href="https://www.instagram.com/ahmcgl1/" target="_blank">Instagram</a>
+    <a href="https://wa.me/905301230692" target="_blank">WhatsApp</a>
+  </section>
+
+  <footer>
     © 2025 Ahmet Çeğil Akademi. Tüm hakları saklıdır.
   </footer>
 </body>
