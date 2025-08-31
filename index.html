@@ -2,124 +2,198 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ahmet Çeğil Akademi</title>
+  <meta name="description" content="Ahmet Çeğil Akademi — prodüksiyon, mix & mastering, sound design ve yayın odaklı modern müzik eğitimleri.">
+  <meta name="robots" content="index,follow">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ahmet Çeğil Akademi">
+  <meta property="og:description" content="Müziğini fikirden yayına taşı: üret, doğru miksle, profesyonelce yayınla.">
+  <meta property="og:image" content="assets/hero.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/logo.png"/>
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      line-height: 1.6;
+    :root{
+      --bg:#0c0c0f;
+      --panel:#15151b;
+      --text:#e9eef5;
+      --muted:#aab4c0;
+      --brand:#00e1ff;
+      --brand2:#23ffa7;
     }
-    header {
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(135deg, #111, #222);
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+
+    /* NAV */
+    .nav{
+      position: sticky; top:0; z-index:50;
+      backdrop-filter:saturate(160%) blur(8px);
+      background: rgba(12,12,15,.65);
+      border-bottom:1px solid rgba(255,255,255,.05);
     }
-    header p {
-      font-size: 1.2rem;
-      color: #aaa;
+    .container{max-width:1100px; margin:auto; padding:0 20px;}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:12px 0;}
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:700; letter-spacing:.4px}
+    .brand img{width:34px; height:34px; border-radius:10px}
+    .nav a.link{color:var(--muted); text-decoration:none; margin-left:18px; font-weight:600}
+    .nav a.link:hover{color:var(--text)}
+
+    /* HERO */
+    .hero{
+      position:relative; overflow:hidden;
+      min-height:64vh;
+      display:grid; place-items:center;
+      text-align:center;
     }
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:
+        radial-gradient(60rem 30rem at 10% 10%, rgba(0,225,255,.18), transparent 60%),
+        radial-gradient(50rem 30rem at 90% 0%, rgba(35,255,167,.12), transparent 60%),
+        linear-gradient(180deg, rgba(12,12,15,.4), rgba(12,12,15,.9));
+      z-index:1;
     }
-    .paketler {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+    .hero img.bg{
+      position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.45) saturate(1.2);
     }
-    .paket {
-      background: #1c1c1c;
-      border: 1px solid #333;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
+    .hero-content{position:relative; z-index:2; padding:80px 20px 60px}
+    .title{font-size:clamp(32px,5vw,56px); font-weight:900; letter-spacing:.3px; margin:0 0 10px}
+    .tag{color:var(--muted); margin:0 0 28px; font-size:clamp(14px,2.5vw,18px)}
+    .cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+    .btn{
+      appearance:none; border:0; cursor:pointer; font-weight:800;
+      padding:12px 18px; border-radius:14px; text-decoration:none;
+      color:#0b0b0f; background: linear-gradient(135deg,var(--brand),var(--brand2));
+      box-shadow: 0 10px 30px rgba(0,225,255,.18);
+      transition: transform .15s ease, box-shadow .2s ease;
     }
-    .paket h3 {
-      margin-bottom: 15px;
-      color: cyan;
+    .btn:hover{transform: translateY(-2px); box-shadow:0 16px 38px rgba(0,225,255,.26)}
+    .btn-ghost{
+      background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.15)
     }
-    .paket ul {
-      text-align: left;
-      padding-left: 20px;
+    .btn-ghost:hover{border-color:rgba(255,255,255,.3)}
+
+    /* SECTION */
+    section{padding:64px 20px}
+    h2.section-title{font-size:28px; margin:0 0 8px}
+    p.section-sub{color:var(--muted); margin:0}
+
+    /* CARDS */
+    .grid{display:grid; gap:20px}
+    @media(min-width:720px){ .grid{grid-template-columns: repeat(3, 1fr);} }
+    .card{
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px; padding:22px;
+      backdrop-filter:saturate(160%) blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      transition: transform .15s ease, box-shadow .2s;
     }
-    .iletisim a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #fff;
-      background: cyan;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.8rem;
-      color: #666;
-      border-top: 1px solid #222;
-      margin-top: 50px;
-    }
+    .card:hover{transform: translateY(-3px); box-shadow:0 18px 42px rgba(0,0,0,.5)}
+    .card h3{margin:0 0 8px; color:var(--brand)}
+    .card ul{margin:12px 0 0; padding-left:18px; color:var(--muted)}
+    .chip{display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(0,225,255,.1); border:1px solid rgba(0,225,255,.35); color:var(--brand)}
+
+    /* CONTACT */
+    .contact{background: linear-gradient(180deg, rgba(255,255,255,.02), transparent)}
+    .contact .wrap{background: rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:22px}
+
+    footer{border-top:1px solid rgba(255,255,255,.06); color:var(--muted); text-align:center; padding:24px 20px}
   </style>
 </head>
 <body>
-  <header>
-    <h1>Ahmet Çeğil Akademi</h1>
-    <p><em>Sen üret.</em></p>
-  </header>
 
-  <section>
-    <h2 style="text-align:center;">🎵 Eğitim Paketleri</h2>
-    <div class="paketler">
-      <div class="paket">
-        <h3>Başlangıç Paketi</h3>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">
+        <img src="assets/logo.png" alt="ACA">
+        <span>Ahmet Çeğil Akademi</span>
+      </a>
+      <div>
+        <a class="link" href="#paketler">Paketler</a>
+        <a class="link" href="#iletisim">İletişim</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="assets/hero.jpg" class="bg" alt="">
+    <div class="hero-content container">
+      <h1 class="title">Müziğini fikirden yayına taşı.</h1>
+      <p class="tag">Üret • doğru miksle • profesyonelce yayınla</p>
+      <div class="cta">
+        <a class="btn" href="#paketler">Paketleri Gör</a>
+        <a class="btn btn-ghost" href="#iletisim">Birebir Koçluk</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAKETLER -->
+  <section id="paketler" class="container">
+    <h2 class="section-title">🎵 Eğitim Paketleri</h2>
+    <p class="section-sub">Senden gelecek detaylarla içeriği netleştiririz; şimdilik örnek akışlar:</p>
+
+    <div class="grid" style="margin-top:18px">
+      <div class="card">
+        <span class="chip">Başlangıç • 30 gün</span>
+        <h3>DAW Temelleri & Üretime Giriş</h3>
         <ul>
-          <li>DAW temel kullanımı</li>
-          <li>Melodi yazımı & armoni</li>
-          <li>Drum kit düzeni</li>
-          <li>4 hafta × 2 saat = <strong>8 saat</strong></li>
+          <li>Melodi yazımı, armoni, drum kit</li>
+          <li>Tarza uygun kanal/efekt ayarları</li>
+          <li>Haftada 1 oturum (2 saat) × 4 = <b>8 saat</b></li>
           <li>Online veya yüz yüze</li>
         </ul>
       </div>
-      <div class="paket">
-        <h3>Orta Seviye</h3>
+
+      <div class="card">
+        <span class="chip">Orta Seviye</span>
+        <h3>Mix Temelleri & Düzen Geliştirme</h3>
         <ul>
-          <li>Mixing temel teknikler</li>
-          <li>EQ & kompresyon</li>
+          <li>Gain staging, EQ, kompresyon</li>
+          <li>Grup/Bus ve referansla metering</li>
           <li>Groove & bassline tasarımı</li>
-          <li>Aranjman geliştirme</li>
-          <li>4 hafta × 3 saat</li>
         </ul>
       </div>
-      <div class="paket">
-        <h3>İleri Seviye</h3>
+
+      <div class="card">
+        <span class="chip">İleri</span>
+        <h3>Mix & Mastering Pro / Yayına Hazır</h3>
         <ul>
-          <li>Profesyonel mix & mastering</li>
-          <li>Label & dijital dağıtım</li>
-          <li>Serum/Spire/Dune sound design</li>
-          <li>Proje analizi & mentorluk</li>
-          <li>Gerçek yayın süreci simülasyonu</li>
+          <li>Stereo field, derinlik & limiter hedefleri</li>
+          <li>Ozone/Maximus zinciri stratejileri</li>
+          <li>Spotify/Beatport odaklı teslim</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section class="iletisim" style="text-align:center;">
-    <h2>📩 İletişim</h2>
-    <a href="mailto:ahmetcegilakademi@gmail.com">E-posta</a>
-    <a href="https://www.instagram.com/ahmcgl1/" target="_blank">Instagram</a>
-    <a href="https://wa.me/905301230692" target="_blank">WhatsApp</a>
+  <!-- İLETİŞİM -->
+  <section id="iletisim" class="contact">
+    <div class="container">
+      <div class="wrap">
+        <h2 class="section-title">📩 İletişim</h2>
+        <p class="section-sub">Soruların ve kayıt için hızlı bağlantılar:</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px">
+          <a class="btn" href="mailto:ahmetcegilakademi@gmail.com?subject=ACA%20Bilgi%20Talebi">E-posta</a>
+          <a class="btn" style="background:linear-gradient(135deg,#25D366,#15b353)" target="_blank" href="https://wa.me/905301230692?text=Merhaba%20Ahmet%20hocam%2C%20e%C4%9Fitimler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">WhatsApp</a>
+          <a class="btn btn-ghost" target="_blank" href="https://www.instagram.com/ahmcgl1/">Instagram</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
-    © 2025 Ahmet Çeğil Akademi. Tüm hakları saklıdır.
+    © <span id="yil"></span> Ahmet Çeğil Akademi — Modern elektronik müzik eğitimleri
   </footer>
+
+  <script>document.getElementById('yil').textContent = new Date().getFullYear();</script>
 </body>
 </html>
