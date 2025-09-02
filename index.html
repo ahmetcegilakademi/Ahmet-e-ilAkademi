@@ -16,11 +16,6 @@
     :root{
       --bg:#0c0c0f; --panel:#15151b; --text:#e9eef5; --muted:#aab4c0;
       --brand:#00e1ff; --brand2:#23ffa7;
-
-      /* Hero logo konumları (merkez referanslı) */
-      --hero-logo-top: 25%;
-      --hero-logo-left-fl: -440px;       /* FL: M'nin biraz solu */
-      --hero-logo-left-ableton: -270px;  /* Ableton: FL'nin sağında, aynı hizada */
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
@@ -50,22 +45,21 @@
     /* ANİMASYONLU LOGOLAR */
     .floating-logo{
       position:absolute;
-      top: var(--hero-logo-top);
-      width:150px;
-      opacity:.42;                 /* daha görünür */
+      top: 26%;
+      width:160px;
+      opacity:.55;
+      z-index:2;
       pointer-events:none;
-      z-index:1;                   /* yazı üstünde istersen 2 yapabilirsin */
       animation: floatDown 18s linear infinite alternate;
-      mix-blend-mode: screen;      /* koyu zeminde rengi açar */
-      filter: drop-shadow(0 8px 20px rgba(0,0,0,.35));
+      filter: drop-shadow(0 10px 22px rgba(0,0,0,.45));
     }
-    .floating-logo--fl{ left: calc(50% + var(--hero-logo-left-fl)); }
-    .floating-logo--ableton{ left: calc(50% + var(--hero-logo-left-ableton)); }
+    .floating-logo--fl{ left: calc(50% - 520px); }
+    .floating-logo--ableton{ left: calc(50% - 340px); width:140px; }
 
     @keyframes floatDown{
-      0%   { transform: translateY(-12px) rotate(-2deg); }
-      50%  { transform: translateY(10px) rotate(0deg); }
-      100% { transform: translateY(-12px) rotate(-2deg); }
+      0%   { transform: translateY(-10px) }
+      50%  { transform: translateY( 12px) }
+      100% { transform: translateY(-10px) }
     }
 
     /* SECTION */
@@ -87,12 +81,6 @@
     .contact .wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px}
 
     footer{border-top:1px solid rgba(255,255,255,.06);color:var(--muted);text-align:center;padding:24px 20px}
-
-    /* Mobilde logoları küçült/hafiflet */
-    @media (max-width:720px){
-      :root{ --hero-logo-top: 22%; --hero-logo-left-fl: -42vw; --hero-logo-left-ableton: -24vw; }
-      .floating-logo{ width:90px; opacity:.32 }
-    }
   </style>
 </head>
 <body>
