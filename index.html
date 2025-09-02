@@ -6,86 +6,21 @@
   <title>Ahmet Çeğil Akademi</title>
   <meta name="description" content="Ahmet Çeğil Akademi — prodüksiyon, mix & mastering, sound design ve yayın odaklı modern müzik eğitimleri.">
   <meta name="robots" content="index,follow">
-  <!-- Open Graph -->
   <meta property="og:title" content="Ahmet Çeğil Akademi">
   <meta property="og:description" content="Müziğini fikirden yayına taşı: üret, doğru miksle, profesyonelce yayınla.">
   <meta property="og:image" content="assets/hero.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/logo.png"/>
 
- <style>
-  :root{
-    --bg:#0c0c0f;
-    --panel:#15151b;
-    --text:#e9eef5;
-    --muted:#aab4c0;
-    --brand:#00e1ff;
-    --brand2:#23ffa7;
-  }
+  <style>
+    :root{
+      --bg:#0c0c0f; --panel:#15151b; --text:#e9eef5; --muted:#aab4c0;
+      --brand:#00e1ff; --brand2:#23ffa7;
 
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  body{font-family:ui-sans-serif,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-
-  /* NAV */
-  .nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(8px);background:rgba(12,12,15,.65);border-bottom:1px solid rgba(255,255,255,.05)}
-  .container{max-width:1100px;margin:auto;padding:0 20px}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700;letter-spacing:.4px}
-  .brand img{width:34px;height:34px;border-radius:10px}
-  .nav a.link{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
-  .nav a.link:hover{color:var(--text)}
-
-  /* HERO */
-  .hero{position:relative;overflow:hidden;min-height:64vh;display:grid;place-items:center;text-align:center;background:linear-gradient(180deg, rgba(12,12,15,.4), rgba(12,12,15,.9))}
-  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.45) saturate(1.2)}
-  .hero-content{position:relative;z-index:2;padding:80px 20px 60px}
-  .title{font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:.3px;margin:0 0 10px}
-  .tag{color:var(--muted);margin:0 0 28px;font-size:clamp(14px,2.5vw,18px)}
-  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .btn{appearance:none;border:0;cursor:pointer;font-weight:800;padding:12px 18px;border-radius:14px;text-decoration:none;color:#0b0b0f;background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:0 10px 30px rgba(0,225,255,.18);transition:transform .15s ease,box-shadow .2s}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(0,225,255,.26)}
-  .btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.15)}
-  .btn-ghost:hover{border-color:rgba(255,255,255,.3)}
-
-  /* ANİMASYONLU LOGO */
-  .floating-logo {
-    position: absolute;
-    left: calc(50% - 360px);  /* M harfinin soluna göre ayarla */
-    top: 28%;                 /* dikey konum */
-    width: 130px;
-    opacity: 0.16;
-    z-index: 1;
-    pointer-events: none;
-    animation: floatDown 18s linear infinite alternate;
-    filter: drop-shadow(0 6px 18px rgba(0,0,0,.25));
-  }
-  @keyframes floatDown {
-    0%   { transform: translateY(-12px) rotate(-2deg); }
-    50%  { transform: translateY(10px) rotate(0deg); }
-    100% { transform: translateY(-12px) rotate(-2deg); }
-  }
-
-  /* SECTION */
-  section{padding:64px 20px}
-  h2.section-title{font-size:28px;margin:0 0 8px}
-  p.section-sub{color:var(--muted);margin:0}
-
-  /* CARDS */
-  .grid{display:grid;gap:20px}
-  @media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}}
-  .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px;backdrop-filter:saturate(160%) blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .15s ease,box-shadow .2s}
-  .card:hover{transform:translateY(-3px);box-shadow:0 18px 42px rgba(0,0,0,.5)}
-  .card h3{margin:0 0 8px;color:var(--brand)}
-  .card ul{margin:12px 0 0;padding-left:18px;color:var(--muted)}
-  .chip{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(0,225,255,.1);border:1px solid rgba(0,225,255,.35);color:var(--brand)}
-
-  /* CONTACT */
-  .contact{background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
-  .contact .wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px}
-
-  footer{border-top:1px solid rgba(255,255,255,.06);color:var(--muted);text-align:center;padding:24px 20px}
-</style>
+      /* Hero logo konumları (merkez referanslı) */
+      --hero-logo-top: 25%;
+      --hero-logo-left-fl: -440px;       /* FL: M'nin biraz solu */
+      --hero-logo-left-ableton: -270px;  /* Ableton: FL'nin sağında, aynı hizada */
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
@@ -101,11 +36,7 @@
     .nav a.link:hover{color:var(--text)}
 
     /* HERO */
-    .hero{position:relative;overflow:hidden;min-height:64vh;display:grid;place-items:center;text-align:center}
-    .hero::before{content:"";position:absolute;inset:0;background:
-      radial-gradient(60rem 30rem at 10% 10%, rgba(0,225,255,.18), transparent 60%),
-      radial-gradient(50rem 30rem at 90% 0%, rgba(35,255,167,.12), transparent 60%),
-      linear-gradient(180deg, rgba(12,12,15,.4), rgba(12,12,15,.9));z-index:1}
+    .hero{position:relative;overflow:hidden;min-height:64vh;display:grid;place-items:center;text-align:center;background:linear-gradient(180deg, rgba(12,12,15,.4), rgba(12,12,15,.9))}
     .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.45) saturate(1.2)}
     .hero-content{position:relative;z-index:2;padding:80px 20px 60px}
     .title{font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:.3px;margin:0 0 10px}
@@ -115,6 +46,27 @@
     .btn:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(0,225,255,.26)}
     .btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.15)}
     .btn-ghost:hover{border-color:rgba(255,255,255,.3)}
+
+    /* ANİMASYONLU LOGOLAR */
+    .floating-logo{
+      position:absolute;
+      top: var(--hero-logo-top);
+      width:150px;
+      opacity:.42;                 /* daha görünür */
+      pointer-events:none;
+      z-index:1;                   /* yazı üstünde istersen 2 yapabilirsin */
+      animation: floatDown 18s linear infinite alternate;
+      mix-blend-mode: screen;      /* koyu zeminde rengi açar */
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,.35));
+    }
+    .floating-logo--fl{ left: calc(50% + var(--hero-logo-left-fl)); }
+    .floating-logo--ableton{ left: calc(50% + var(--hero-logo-left-ableton)); }
+
+    @keyframes floatDown{
+      0%   { transform: translateY(-12px) rotate(-2deg); }
+      50%  { transform: translateY(10px) rotate(0deg); }
+      100% { transform: translateY(-12px) rotate(-2deg); }
+    }
 
     /* SECTION */
     section{padding:64px 20px}
@@ -130,19 +82,17 @@
     .card ul{margin:12px 0 0;padding-left:18px;color:var(--muted)}
     .chip{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(0,225,255,.1);border:1px solid rgba(0,225,255,.35);color:var(--brand)}
 
-    /* Compact */
-    .card.compact{padding:18px}
-    .card.compact h3{font-size:20px;margin-bottom:6px}
-    .card.compact .chip{font-size:11px;padding:5px 9px}
-    .card.compact ul{margin:10px 0 0;line-height:1.38}
-    .card.compact li{margin:4px 0}
-    .card.compact p{margin-top:10px}
-
     /* CONTACT */
     .contact{background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
     .contact .wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px}
 
     footer{border-top:1px solid rgba(255,255,255,.06);color:var(--muted);text-align:center;padding:24px 20px}
+
+    /* Mobilde logoları küçült/hafiflet */
+    @media (max-width:720px){
+      :root{ --hero-logo-top: 22%; --hero-logo-left-fl: -42vw; --hero-logo-left-ableton: -24vw; }
+      .floating-logo{ width:90px; opacity:.32 }
+    }
   </style>
 </head>
 <body>
@@ -162,21 +112,22 @@
   </div>
 
   <!-- HERO -->
-<section class="hero">
-  <img src="hero-bg.png" class="bg" alt="">
+  <section class="hero">
+    <img src="hero-bg.png" class="bg" alt="">
 
-  <!-- Animasyonlu FL Studio logosu -->
-  <img src="fl-logo.png" alt="FL Studio" class="floating-logo">
+    <!-- Animasyonlu logolar -->
+    <img src="fl-logo.png" alt="FL Studio" class="floating-logo floating-logo--fl">
+    <img src="ableton-logo.png" alt="Ableton Live" class="floating-logo floating-logo--ableton">
 
-  <div class="hero-content container">
-    <h1 class="title">Müziğini Fikirden Yayına Taşı.</h1>
-    <p class="tag">Üret • Doğru Miksle • Profesyonelce Yayınla</p>
-    <div class="cta">
-      <a class="btn" href="#paketler">Paketleri Gör</a>
-      <a class="btn btn-ghost" href="#iletisim">Birebir Koçluk</a>
+    <div class="hero-content container">
+      <h1 class="title">Müziğini Fikirden Yayına Taşı.</h1>
+      <p class="tag">Üret • Doğru Miksle • Profesyonelce Yayınla</p>
+      <div class="cta">
+        <a class="btn" href="#paketler">Paketleri Gör</a>
+        <a class="btn btn-ghost" href="#iletisim">Birebir Koçluk</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- PAKETLER -->
   <section id="paketler" class="container">
@@ -184,7 +135,6 @@
     <p class="section-sub">Seviyene uygun içeriklerle seni sıfırdan yayına hazır müzik üretimine götürüyoruz.</p>
 
     <div class="grid" style="margin-top:18px">
-      <!-- Başlangıç (OPTİMİZE) -->
       <div class="card compact" id="paket-baslangic">
         <span class="chip">Müziğe İlk Adım • 30 Gün</span>
         <h3>DAW Temelleri & Üretime Giriş</h3>
@@ -196,13 +146,9 @@
           <li><b>Mixing Temelleri</b> — Gain staging, EQ, kompresyon ve temel FX (reverb/delay)</li>
           <li><b>Mini Proje</b> — 16 bar loop’tan kısa parça üretimi & doğru export</li>
         </ul>
-        <p>
-          <b>Eğitim Süresi:</b> Haftada 2 gün × 1 saat = <b>8 saat</b> (30 gün) <br>
-          <span style="color:var(--muted)">Ön koşul yok • Uygulamalı pratik & kısa ödev geri bildirimi</span>
-        </p>
+        <p><b>Eğitim Süresi:</b> Haftada 2 gün × 1 saat = <b>8 saat</b> (30 gün)</p>
       </div>
 
-      <!-- Orta -->
       <div class="card">
         <span class="chip">Orta Seviye • 30 Gün</span>
         <h3>Mix Temelleri & Düzen Geliştirme</h3>
@@ -216,7 +162,6 @@
         <p><b>Eğitim Süresi:</b> Haftada 3 gün × 1 saat = <b>12 saat</b> (30 gün)</p>
       </div>
 
-      <!-- İleri -->
       <div class="card">
         <span class="chip">İleri Seviye • 30 Gün</span>
         <h3>Mix & Mastering Pro / Yayına Hazır</h3>
@@ -252,6 +197,6 @@
     © <span id="yil"></span> Ahmet Çeğil Akademi — Modern elektronik müzik eğitimleri
   </footer>
 
-  <script>document.getElementById('yil').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('yil').textContent=new Date().getFullYear();</script>
 </body>
 </html>
